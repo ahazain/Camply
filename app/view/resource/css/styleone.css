@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,100;1,300&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ==========HEADER=========== */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4); /* Adjust the values here */
+  background-color: #49944f;
+}
+
+
+.imgcamp {
+  width: 140px;
+  height: auto;
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+.nav__container {
+  position: relative;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* Add padding to the left and right for better spacing */
+}
+
+.nav__toggle,
+.nav__close {
+  display: inline-flex;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* =======navigation for mobile devices========= */
+@media screen and (max-width: 1080px) and (min-width: 320px) {
+  .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 1px 16px hsla(210, 55%, 24%, 0.1);
+      background-color: #c44640;
+      padding: 3.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.5rem;
+      transition: top 0.4s, background-color 0.3s; /* Add background-color transition */
+  }
+}
+
+.nav__search,
+.nav__close,
+.nav__toggle {
+  position: absolute;
+  top: 1rem;
+}
+
+.nav__list {
+  display: flex;
+  gap: 1rem; /* Adjust the gap between navigation items */
+}
+
+.nav__logo {
+  width: 100%;
+  margin-left: 1%;
+  margin-top: -4rem;
+}
+
+.nav__link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: red;
+}
+
+.nav__search {
+  top: 2.3rem;
+  right: 12rem;
+}
+
+.nav__close {
+  right: 1.2rem;
+}
+
+.nav__toggle {
+  right: 1.9rem;
+}
+
+.show-menu {
+  top: 0;
+}
+
+/* hp */
+@media screen and (min-width: 320px) and (max-width: 1080px) {
+  .nav__logo img {
+      top: -0.9%;
+      width: 130px;
+  }
+}
+
+/* laptop ==============================*/
+@media screen and (min-width: 1080px) {
+  .nav {
+      height: calc(3.5rem) + 2rem;
+      grid-template-columns: 4rem;
+  } 
+
+  .nav__toggle,
+  .nav__close {
+      display: none;
+  }
+
+  .nav__logo img {
+      margin-left: 1%;
+      top: -1%;
+  }
+
+  .nav__menu {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+  }
+
+  .nav__list {
+      flex-direction: row;
+      columns: 10rem;
+      margin-right: 24%;
+      margin-top: 2.7%;
+  }
+
+  .nav__item {
+      margin-left: 5%;
+      margin-right: 5%;
+      font-size: 0.875rem;
+      position: relative;
+  }
+
+  .nav__logo {
+      width: 100%;
+      height: auto;
+  }
+
+  .home__data {
+    row-gap: 1rem;
+  }
+
+  .home__description {
+    margin-bottom: 3rem;
+    color: #788291;
+  }
+
+  .home__title {
+    font-size: 2.25rem;
+    z-index: 999;
+  }
+  .home__subtitle {
+    font-size: 0.813rem;
+    z-index: 999;
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    background-color: rgb(100, 111, 160);
+    color: black;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0px 26px 20px 0px rgb(129, 142, 196);
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+    border-radius: 0.5rem;
+    background-color: #c44640;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: #a32620;
+  }
+}
+
+.home {
+  position: relative;
+  margin-top: 6%;
+  height: auto;
+  background-color: #fff;
+}
+
+.home__container {
+  background-color: #ffffff;
+  padding-top: 13rem;
+  height: auto; /* Adjusted height to be responsive */
+}
+
+.home__data {
+  display: grid;
+  row-gap: 1px;
+  padding-left: 5%;
+}
+
+.home__subtitle {
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  letter-spacing: 3px;
+}
+
+.home__title {
+  font-size: 3rem;
+  color: #000000;
+}
+
+.title {
+  display: block; /* Fixed the span display issue */
+}
+
+.home__description {
+  margin-bottom: 2.5rem;
+}
+
+.home__image img {
+  position: absolute;
+  max-width: initial;
+  left: 48rem;
+  margin-bottom: 42%;
+  bottom: 0;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+  background-color: rgb(100, 111, 160);
+  color: black;
+  font-family: "Poppins", sans-serif;
+  padding: 4% 0; /* Added some padding for better readability */
+}
+
+.about {
+  text-align: justify;
+  margin-top: 5%;
+  color: #000;
+  max-width: 1140px;
+  font-size: 18px;
+}
+
+/* Add additional styles as needed */
+
+
+
+.title {
+  color: rgb(59, 2, 58);
+}
+
+/* ===========About========== */
+
+.aboutisi {
+  margin-top: 8%;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+}
+.aboutisi2 {
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 3rem;
+  position: relative;
+  color: #49944f;
+}
+.aboutisi2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 0.8rem;
+}
+
+.fontabo{
+  margin-left: 5%;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.aboutisi3 {
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0px;
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+  margin-left: 20%;
+  margin-right: 10%;
+  color: #37435a;
+}
+
+.about-img{
+  width: 100%;
+}
+
+.aboutisi5 {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.b {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+/* ==========Products========== */
+.pro {
+  margin-top: 8%;
+  font-size: 3rem;
+  text-align: center;
+  background-color: #f6fff7;
+
+  height: 8rem;
+}
+
+/* .man {
+  color: black;
+  text-align: center;
+  background: #7fe388;
+  background-size: 100% 300px;
+} */
+
+.size{
+  font-size: 12px;
+}
+
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 100px 50px 0px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  text-align: center;
+  height: auto;
+  font-size: 1rem;
+  color: #810f09;
+  max-width: 200px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+}
+
+.product-image {
+  width: 70%;
+  height: auto;
+  /* border: 1px solid #ccc; */
+  margin-bottom: 10px; /* Adjusted margin for better spacing */
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name,
+.product-price {
+  margin: 0; /* Remove default margin for paragraphs */
+  color: #000;
+}
+
+.product-details img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product-details button {
+  margin-top: 10px; /* Add margin to the button for spacing */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pagination a {
+  padding: 10px 15px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #09bc279d;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #008d189d;
+}
+
+/* ===========RECIPES========== */
+.rec2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.rec22 {
+  text-align: center;
+  font-size: 1rem;
+  color: #810f09;
+  margin: 20px;
+}
+
+.rec222 {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+/*===========================*/
+/* styles.css */
+
+/* Style for the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+/* Style for the dropdown options */
+.options {
+  display: none;
+  position: absolute;
+  background-color: #09bc279d;
+  box-shadow: 0 8px 16px rgba(125, 0, 0, 0.634);
+  z-index: 1;
+  font-size: 0.875rem;
+}
+
+.options a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.options a:hover {
+  background-color: #09bc279d;
+}
+/*========================/*
+
+
+
+/* ============FOOTER============ */
+/* Reset some default styling for lists and anchors */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0px 20px 100px;
+  margin-top: auto;
+  position: relative; /* Ensure relative positioning for absolute positioning inside */
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.footer-section h2 {
+  color: #e74c3c;
+}
+
+.footer-section p,
+.footer-section address {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.fab fa-instagram {
+  font-family: "Poppins", sans-serif;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 51.75%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+/* 
+=======================buttom=============== */
+.hidden {
+  display: none;
+}
+
+#imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =============tampilan detail_pembelian==== */
+.diskripsi {
+  color: rgb(75, 51, 7);
+  font-size: medium;
+}
+
+.harga {
+  margin-bottom: 7%;
+}
